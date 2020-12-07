@@ -134,16 +134,19 @@ The function ``def request(query, params):`` always returns the ``params``
 variable.  Inside searx, the following paramters can be used to specify a search
 request:
 
-============ =========== =========================================================
-argument     type        information
-============ =========== =========================================================
-url          string      requested url
-method       string      HTTP request method
-headers      set         HTTP header information
-data         set         HTTP data information (parsed if ``method != 'GET'``)
-cookies      set         HTTP cookies
-verify       boolean     Performing SSL-Validity check
-============ =========== =========================================================
+================== =========== ==========================================================================
+argument           type        information
+================== =========== ==========================================================================
+url                string      requested url
+method             string      HTTP request method
+headers            set         HTTP header information
+data               set         HTTP data information (parsed if ``method != 'GET'``)
+cookies            set         HTTP cookies
+verify             boolean     Performing SSL-Validity check
+max_redirects      int         maximum redirects, hard limit
+soft_max_redirects int         maximum redirects, soft limit. Record an error but don't stop the engine
+raise_for_status   bool        True by default: raise an exception if the HTTP code of response is >= 300
+================== =========== ==========================================================================
 
 
 example code
@@ -262,7 +265,7 @@ latitude                  latitude of result (in decimal format)
 longitude                 longitude of result (in decimal format)
 boundingbox               boundingbox of result (array of 4. values
                           ``[lat-min, lat-max, lon-min, lon-max]``)
-geojson                   geojson of result (http://geojson.org)
+geojson                   geojson of result (https://geojson.org/)
 osm.type                  type of osm-object (if OSM-Result)
 osm.id                    id of osm-object (if OSM-Result)
 address.name              name of object
