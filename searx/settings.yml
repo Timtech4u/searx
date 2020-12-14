@@ -491,7 +491,7 @@ engines:
 
   - name : library genesis
     engine : xpath
-    search_url : https://libgen.is/search.php?req={query}
+    search_url : http://libgen.rs/search.php?req={query}
     url_xpath : //a[contains(@href,"bookfi.net")]/@href
     title_xpath : //a[contains(@href,"book/")]/text()[1]
     content_xpath : //td/a[1][contains(@href,"=author")]/text()
@@ -647,11 +647,6 @@ engines:
     shortcut : qwn
     categories : news
 
-  - name : qwant social
-    engine : qwant
-    shortcut : qws
-    categories : social media
-
 #  - name: library
 #    engine: recoll
 #    shortcut: lib
@@ -698,10 +693,6 @@ engines:
   - name : stackoverflow
     engine : stackoverflow
     shortcut : st
-
-  - name : searchcode doc
-    engine : searchcode_doc
-    shortcut : scd
 
   - name : searchcode code
     engine : searchcode_code
@@ -769,10 +760,6 @@ engines:
     categories : onions
     shortcut : tch
 
-  - name : twitter
-    engine : twitter
-    shortcut : tw
-
 # maybe in a fun category
 #  - name : uncyclopedia
 #    engine : mediawiki
@@ -817,12 +804,13 @@ engines:
     # Or you can use the html non-stable engine, activated by default
     engine : youtube_noapi
 
-  - name : yggtorrent
-    engine : yggtorrent
-    shortcut : ygg
-    url: https://www2.yggtorrent.si/
-    disabled : True
-    timeout : 4.0
+  # tmp suspended: Cloudflare CAPTCHA
+  #- name : yggtorrent
+  #  engine : yggtorrent
+  #  shortcut : ygg
+  #  url: https://www2.yggtorrent.si/
+  #  disabled : True
+  #  timeout : 4.0
 
   - name : dailymotion
     engine : dailymotion
@@ -966,12 +954,6 @@ engines:
     first_page_num : 0
     page_size : 10
     disabled : True
-
-  - name : seedpeer
-    shortcut : speu
-    engine : seedpeer
-    categories: files, music, videos
-
 
   - name : naver
     shortcut: nvr
